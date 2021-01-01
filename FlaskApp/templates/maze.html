@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+
+<!--create opening html tag-->
+<html lang = "en-us">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,900,900i" rel="stylesheet">
+    <link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/unicons.css'>
+
+    <link rel="stylesheet" href={{ url_for('static', filename='assets/css/style.css') }}>
+
+    <title>Maze</title>
+</head>
+
+<body>
+    <!-- Top Button -->
+    							
+	<div class="progress-wrap">
+		<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+			<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+		</svg>
+	</div>
+        
+    <!-- Image and text -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href='/home'><img src={{ url_for('static', filename='assets/images/maze.png') }} width="30" height="30" class="d-inline-block align-top" alt=""> Maze</a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse justify-right" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href='/maze'>Entrance</a>
+                 </li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <div class ='row'>
+        <div class="col-md-2"></div>
+            <div class="container-fluid col-md-8 text-white" >
+                <div class="row align-items-start">
+                    <div class="col-md-5 " id="context">
+                        
+                    </div>
+
+                    <div class = 'col-md-7' id="image">
+                        <img src = {{ url_for('static', filename = 'assets/images/locations/start.jpeg') }} class="img-fluid" id = 'location'/>
+                    </div>
+                </div>
+                <div class ='row justify-center' id ='options'>
+
+                </div>
+                <footer>
+                    <p>&copy; {{ year }} - Maze</p>
+                </footer>
+            </div>
+        <div class="col-md-2"></div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha384-JUMjoW8OzDJw4oFpWIB2Bu/c6768ObEthBMVSiIx4ruBIEdyNSUQAjJNFqT5pnJ6" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script type="text/javascript">
+    var image = {{ image }}
+    var text =  {{ text }}
+    var room = {{ room }}
+</script>
+<script src={{ url_for('static', filename='assets/js/test.js') }}></script>
+</body>
