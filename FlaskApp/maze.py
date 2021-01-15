@@ -11,7 +11,7 @@ except ImportError:
     import Image
 # import random
 # random.seed(datetime.ctime)
-
+pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files/Tesseract-OCR/tesseract.exe'
 locpath = "FlaskApp/static/assets/images/location/"
 textpath = "FlaskApp/static/assets/images/text/"
 
@@ -23,7 +23,7 @@ print(images)
 
 for img in textimg:
     try:
-        text.append(pytesseract.image_to_string(Image.open(textpath+img), timeout = 1))
+        text.append(pytesseract.image_to_string(Image.open(textpath+img), timeout = 2.5))
     except RuntimeError as timeout_error:
         pass
 
