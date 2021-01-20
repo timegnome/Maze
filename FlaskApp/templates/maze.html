@@ -14,7 +14,10 @@
     <link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/unicons.css'>
 
     <link rel="stylesheet" href={{ url_for('static', filename='assets/css/style.css') }}>
-
+    <script type="text/javascript">
+        var text =  {{ data|tojson }}.texts
+        var room = {{ data|tojson }}.rooms
+    </script>
     <title>Maze</title>
 </head>
 
@@ -29,7 +32,7 @@
         
     <!-- Image and text -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href='/home'><img src={{ url_for('static', filename='assets/images/maze.png') }} width="30" height="30" class="d-inline-block align-top" alt=""> Maze</a>
+        <a class="navbar-brand" href='/home'><img src={{ url_for('static', filename='assets/images/homepage/maze.jpg') }} width="30" height="30" class="d-inline-block align-top" alt=""> Maze</a>
         
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -54,7 +57,7 @@
                     </div>
 
                     <div class = 'col-md-7' id="image">
-                        <img src = {{ url_for('static', filename = 'assets/images/locations/start.jpeg') }} class="img-fluid" id = 'location'/>
+                        <img src = {{ url_for('static', filename = 'assets/images/location/'+data.rooms+'.jpg') }} class="img-fluid" id = 'location'/>
                     </div>
                 </div>
                 <div class ='row justify-center' id ='options'>
@@ -70,10 +73,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://d3js.org/d3.v5.min.js"></script>
-<script type="text/javascript">
-    var image = {{ image }}
-    var text =  {{ text }}
-    var room = {{ room }}
-</script>
-<script src={{ url_for('static', filename='assets/js/test.js') }}></script>
+
+<script src={{ url_for('static', filename='assets/js/choices.js') }}></script>
 </body>

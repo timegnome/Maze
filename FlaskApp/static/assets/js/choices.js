@@ -8,22 +8,26 @@ var options ={0:[1], 1: [20,26,41,21], 2: [29,22,12], 3: [18,9],	4: [44,29,15,11
 	37: [15,10,42,20],	38: [40,22,43],	39: [11,4,12],	40: [11,6,38],	41: [1,35,10,38],
 	42: [22,30,4,25,37],	43: [22,38],	44: [21,18],	45: [28,17,36,19,23]}
 
+	
+// console.log(room)
+// console.log(parseInt(room))
+// console.log(text)
 var context = d3.select('#context')
 context.html('')
 context.append('p')
 .html(`${text}`)
 
-var location = d3.select('#location')
-location.html('')
-location.image(`FlaskApp/static/assets/images/location/start.jpeg`)
+// var location = d3.select('#location')
+// location.html('')
+// location.image(`FlaskApp/static/assets/images/location/PXL_20210114_215802843.jpg`)
 
 choices = d3.select('#options')
 .html('');
-
-options[room].forEach(x => {
-	choices.append('button')
+options[parseInt(room)].forEach(x => {
+	choices.append('div')
+	.attr('class',`col-${12/options[parseInt(room)].length}-md boxed`)
+	.append('a')
 	.attr('id',x)
-	.classed(`col-${12/options[room].length}-md`)
 	.attr('href', `/maze-${x}`)
 	.html(`${x}`)
 });

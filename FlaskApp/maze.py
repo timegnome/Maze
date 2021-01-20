@@ -18,8 +18,8 @@ textpath = "FlaskApp/static/assets/images/text/"
 images = os.listdir( locpath )
 textimg = os.listdir( textpath )
 text = []
-print(textimg)
-print(images)
+# print(textimg)
+# print(images)
 
 for img in textimg:
     try:
@@ -41,10 +41,12 @@ def home():
 @app.route('/maze')
 @app.route('/maze-<room>')
 def maze(room=0):
+    # print(room)
+    # print(text[int(room)])
     return render_template (
         'maze.html',
         year = datetime.now().year,
-        image = room,
-        text = text[room],
-        room = room
+        # image = room,
+        data = {'texts' : text[int(room)],
+        'rooms' : str(room)}
     )
