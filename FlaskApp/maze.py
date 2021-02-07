@@ -20,7 +20,7 @@ textimg = os.listdir( textpath )
 text = []
 # print(textimg)
 # print(images)
-
+# Convert the images of text for each page to text and stored into an array for data reference later.
 for img in textimg:
     try:
         text.append(pytesseract.image_to_string(Image.open(textpath+img), timeout = 2.5))
@@ -37,7 +37,8 @@ def home():
     return render_template (
         'start.html'
     )
-    
+
+# Request route for each new page and the beginning page of the books.
 @app.route('/maze')
 @app.route('/maze-<room>')
 def maze(room=0):
