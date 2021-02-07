@@ -12,3 +12,6 @@ images and parsed using pytesseract.
 
 Alternative option is to build the maze with individual pages and have them displayed using a link. However, this will run
 off a web server without the need for many html locations.
+
+Too run this Maze download the FlaskApp folder and app.py outside of it. Proceed to run the app.py
+after installing the necessary modules.
